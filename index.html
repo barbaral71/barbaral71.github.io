@@ -12,7 +12,7 @@
             --ink-dark: #0f172a;
             --ink-medium: #334155;
             --ink-muted: #64748b;
-            --surface-canvas: #f1f5f9; /* Darker premium gray to eliminate glaring white space */
+            --surface-canvas: #f1f5f9;
             --surface-card: #ffffff;
             --radius-main: 12px;
             --transition-smooth: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -30,10 +30,10 @@
             background-color: var(--surface-canvas);
             color: var(--ink-medium);
             line-height: 1.5;
-            padding-bottom: 40px;
+            padding-bottom: 60px;
         }
 
-        /* COMPACT HIGH-DENSITY NAVIGATION */
+        /* FIXED HIGH-DENSITY STICKY NAVIGATION */
         nav {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(8px);
@@ -42,6 +42,7 @@
             top: 0;
             z-index: 1000;
             padding: 12px 0;
+            margin-bottom: 24px;
         }
 
         .nav-container {
@@ -63,7 +64,7 @@
 
         .nav-links {
             display: flex;
-            gap: 20px;
+            gap: 12px;
         }
 
         .nav-tab {
@@ -74,7 +75,7 @@
             font-size: 0.9rem;
             cursor: pointer;
             transition: var(--transition-smooth);
-            padding: 6px 12px;
+            padding: 8px 16px;
             border-radius: 6px;
         }
 
@@ -88,11 +89,22 @@
             background-color: var(--brand-scarlet);
         }
 
-        /* GRID MAIN CONTAINER - WIDER LAYOUT TO USE SPACE */
+        /* CONTAINER REGION */
         .container {
             max-width: 1200px;
-            margin: 24px auto 0 auto;
+            margin: 0 auto;
             padding: 0 24px;
+        }
+
+        /* VIEW PANEL MECHANICS */
+        .page-panel {
+            display: none;
+            opacity: 0;
+        }
+
+        .page-panel.active {
+            display: block;
+            opacity: 1;
         }
 
         /* HIGH-DENSITY HERO BLOCK */
@@ -103,7 +115,7 @@
             box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.05);
             border: 1px solid #e2e8f0;
             display: grid;
-            grid-template-columns: 180px 1fr;
+            grid-template-columns: 200px 1fr; /* Adjusted for uniform square proportions */
             gap: 32px;
             align-items: center;
             position: relative;
@@ -121,19 +133,26 @@
             border-top-right-radius: var(--radius-main);
         }
 
-        /* SLEEK PORTRAIT BLOCK FRAME */
+        /* PREMIUM SHARP GEOMETRIC DIAMOND WRAPPER MASK */
+        .profile-shadow-wrapper {
+            filter: drop-shadow(0px 8px 16px rgba(15, 23, 42, 0.12)); /* Keeps shadow outside clip-path matrix */
+            width: 200px;
+            height: 200px;
+            flex-shrink: 0;
+        }
+
         .profile-frame {
-            width: 180px;
-            height: 220px;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.1);
+            width: 100%;
+            height: 100%;
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); /* Crops container elements to a sharp diamond geometry */
+            background-color: #f1f5f9;
         }
 
         .profile-img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transform: scale(1.1); /* Scales headshot up slightly to compensate for corner clips */
         }
 
         h1 {
@@ -187,7 +206,6 @@
             border: 1px solid #e2e8f0;
         }
 
-        /* RUBRIC OUTCOME: 1-SENTENCE PERSONAL STATEMENT (2 Points) */
         .personal-statement {
             font-size: 1.15rem;
             color: var(--ink-medium);
@@ -234,24 +252,14 @@
             transform: translateY(-1px);
         }
 
-        /* VIEW PANEL MECHANICS */
-        .page-panel {
-            display: none;
-            opacity: 0;
-            margin-top: 24px;
-        }
-
-        .page-panel.active {
-            display: block;
-            opacity: 1;
-        }
-
+        /* VIEW PANEL LAYOUT SECTION BLOCKS */
         .section-card {
             background: var(--surface-card);
             border-radius: var(--radius-main);
             padding: 32px;
             box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.04);
             border: 1px solid #e2e8f0;
+            margin-top: 24px;
         }
 
         h2 {
@@ -273,7 +281,7 @@
             background: linear-gradient(90deg, #e2e8f0 0%, transparent 100%);
         }
 
-        /* RUBRIC OUTCOME: SKILLS HIGH-DENSITY GRID (2 Points) */
+        /* SKILLS HUB MODULE GRID DISPLAY */
         .skills-container-layout {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -311,7 +319,7 @@
             background-color: var(--brand-scarlet-alpha);
         }
 
-        /* RUBRIC OUTCOME: PROJECTS PIPELINE LAYOUT (2 Points) */
+        /* TIMELINE LAYOUT ARCHITECTURE */
         .timeline-wrapper {
             display: flex;
             flex-direction: column;
@@ -345,16 +353,3 @@
 
         .timeline-card:hover {
             border-color: #cbd5e1;
-            background-color: #ffffff;
-            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.02);
-        }
-
-        .timeline-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 10px;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
