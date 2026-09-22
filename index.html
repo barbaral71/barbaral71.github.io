@@ -89,7 +89,7 @@
             background-color: var(--brand-scarlet);
         }
 
-        /* CONTAINER REGION */
+        /* MAIN CONTAINER REGION */
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -153,6 +153,10 @@
             height: 100%;
             object-fit: cover;
             transform: scale(1.15);
+        }
+
+        .header-main-info {
+            flex-grow: 1;
         }
 
         h1 {
@@ -252,7 +256,7 @@
             transform: translateY(-1px);
         }
 
-        /* VIEW PANEL LAYOUT SECTION BLOCKS */
+        /* VIEW PANEL CARD LAYOUT STRUCTURES */
         .section-card {
             background: var(--surface-card);
             border-radius: var(--radius-main);
@@ -281,7 +285,7 @@
             background: linear-gradient(90deg, #e2e8f0 0%, transparent 100%);
         }
 
-        /* SKILLS HUB MODULE GRID DISPLAY */
+        /* SKILLS HUB COMPONENT DISPLAY */
         .skills-container-layout {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -294,71 +298,4 @@
             padding: 16px;
             border-radius: 8px;
             font-weight: 600;
-            color: var(--ink-dark);
-            font-size: 0.95rem;
-            transition: var(--transition-smooth);
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .skill-luxury-card span {
-            font-size: 1.1rem;
-            background-color: #ffffff;
-            width: 32px;
-            height: 32px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 6px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-        }
-
-        .skill-luxury-card:hover {
-            border-color: var(--brand-scarlet);
-            background-color: var(--brand-scarlet-alpha);
-        }
-
-        /* TIMELINE LAYOUT ARCHITECTURE */
-        .timeline-wrapper {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-
-        .timeline-card {
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            border-radius: 8px;
-            padding: 24px;
-            transition: var(--transition-smooth);
-            position: relative;
-        }
-
-        .timeline-card::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 4px;
-            background-color: #cbd5e1;
-            border-top-left-radius: 8px;
-            border-bottom-left-radius: 8px;
-        }
-
-        .timeline-card:hover::before {
-            background-color: var(--brand-scarlet);
-        }
-
-        .timeline-card:hover {
-            border-color: #cbd5e1;
-            background-color: #ffffff;
-            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.02);
-        }
-
-        .timeline-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 10px;
+            color: var(--ink-dark)
