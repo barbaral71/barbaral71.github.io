@@ -6,180 +6,261 @@
     <title>Kristina Persaud - Professional Portfolio</title>
     <style>
         :root {
-            --primary-dark: #0f172a;  /* Clean Slate Charcoal */
-            --rutgers-red: #cc0033;   /* Official Rutgers Scarlet */
-            --cohn-blue: #1e3a8a;     /* Professional Corporate Navy Blue */
-            --light-bg: #f8fafc;      /* Modern off-white backdrop */
-            --card-bg: #ffffff;
-            --text-dark: #1e293b;
-            --text-muted: #64748b;
+            --brand-scarlet: #cc0033;
+            --brand-scarlet-alpha: rgba(204, 0, 51, 0.05);
+            --brand-scarlet-bright: #ff1a53;
+            --ink-dark: #0f172a;
+            --ink-medium: #334155;
+            --ink-muted: #64748b;
+            --surface-canvas: #f1f5f9; /* Darker premium gray to eliminate glaring white space */
+            --surface-card: #ffffff;
+            --radius-main: 12px;
+            --transition-smooth: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            -webkit-font-smoothing: antialiased;
         }
 
         body {
-            background-color: var(--light-bg);
-            color: var(--text-dark);
-            line-height: 1.6;
-            padding-bottom: 60px;
+            background-color: var(--surface-canvas);
+            color: var(--ink-medium);
+            line-height: 1.5;
+            padding-bottom: 40px;
         }
 
-        .container {
-            max-width: 1100px;
-            margin: 40px auto;
-            padding: 0 20px;
+        /* COMPACT HIGH-DENSITY NAVIGATION */
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 12px 0;
         }
 
-        /* HERO CARD OVERHAUL: Horizontal Layout Split */
-        header {
-            background: var(--card-bg);
-            border-radius: 16px;
-            padding: 40px;
-            box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.04);
-            border: 1px solid #e2e8f0;
-            display: flex;
-            gap: 40px;
-            align-items: center;
-            margin-bottom: 40px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* Modern Professional Soft-Corner Portrait Architecture */
-        .profile-img {
-            width: 200px;
-            height: 250px;
-            object-fit: cover;
-            border-radius: 12px;
-            box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
-            border: 1px solid #e2e8f0;
-            flex-shrink: 0;
-        }
-
-        .header-content {
-            flex-grow: 1;
-        }
-
-        .title-row {
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
             display: flex;
             justify-content: space-between;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin-bottom: 12px;
+            align-items: center;
         }
 
-        h1 {
-            font-size: 2.5rem;
-            color: var(--primary-dark);
+        .nav-logo {
             font-weight: 800;
+            color: var(--ink-dark);
+            text-decoration: none;
+            font-size: 1rem;
             letter-spacing: -0.5px;
         }
 
-        /* Branding Tags Row Container */
-        .tags-row {
+        .nav-links {
             display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin-bottom: 20px;
+            gap: 20px;
         }
 
-        .tag {
-            font-size: 0.8rem;
+        .nav-tab {
+            background: none;
+            border: none;
+            color: var(--ink-muted);
+            font-weight: 700;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            padding: 6px 12px;
+            border-radius: 6px;
+        }
+
+        .nav-tab:hover {
+            color: var(--brand-scarlet);
+            background-color: #f8fafc;
+        }
+
+        .nav-tab.active {
+            color: #ffffff;
+            background-color: var(--brand-scarlet);
+        }
+
+        /* GRID MAIN CONTAINER - WIDER LAYOUT TO USE SPACE */
+        .container {
+            max-width: 1200px;
+            margin: 24px auto 0 auto;
+            padding: 0 24px;
+        }
+
+        /* HIGH-DENSITY HERO BLOCK */
+        header {
+            background: var(--surface-card);
+            border-radius: var(--radius-main);
+            padding: 32px;
+            box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.05);
+            border: 1px solid #e2e8f0;
+            display: grid;
+            grid-template-columns: 180px 1fr;
+            gap: 32px;
+            align-items: center;
+            position: relative;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--brand-scarlet), var(--brand-scarlet-bright));
+            border-top-left-radius: var(--radius-main);
+            border-top-right-radius: var(--radius-main);
+        }
+
+        /* SLEEK PORTRAIT BLOCK FRAME */
+        .profile-frame {
+            width: 180px;
+            height: 220px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.1);
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            color: var(--ink-dark);
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+        }
+
+        .badge-strip {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 16px;
+        }
+
+        .badge {
+            font-size: 0.75rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            padding: 6px 14px;
-            border-radius: 20px;
+            padding: 6px 12px;
+            border-radius: 6px;
             display: inline-flex;
             align-items: center;
             gap: 6px;
         }
 
-        .tag-rutgers {
-            background-color: #fee2e2;
-            color: var(--rutgers-red);
+        .badge-rutgers {
+            background-color: var(--brand-scarlet-alpha);
+            color: var(--brand-scarlet);
+            border: 1px solid rgba(204, 0, 51, 0.1);
         }
 
-        /* Pure CSS SVG Rutgers Block 'R' Icon Integration Component */
-        .rutgers-r {
-            display: inline-block;
-            width: 10px;
-            height: 12px;
-            background-color: var(--rutgers-red);
-            position: relative;
+        .rutgers-r-symbol {
             font-weight: 900;
+            color: var(--brand-scarlet);
+            background: #ffffff;
+            width: 16px;
+            height: 16px;
+            border-radius: 3px;
+            text-align: center;
+            line-height: 16px;
+            font-size: 0.65rem;
         }
 
-        .tag-cohn {
-            background-color: #dbeafe;
-            color: var(--cohn-blue);
-            border: 1px solid #bfdbfe;
+        .badge-cohn {
+            background-color: #f1f5f9;
+            color: var(--ink-dark);
+            border: 1px solid #e2e8f0;
         }
 
+        /* RUBRIC OUTCOME: 1-SENTENCE PERSONAL STATEMENT (2 Points) */
         .personal-statement {
-            font-size: 1.2rem;
-            color: #475569;
-            margin-bottom: 25px;
-            line-height: 1.7;
-            max-width: 750px;
+            font-size: 1.15rem;
+            color: var(--ink-medium);
+            margin-bottom: 20px;
+            line-height: 1.6;
         }
 
-        /* CTA Interactive Dashboard Action Components */
-        .cta-container {
+        .cta-layout {
             display: flex;
             gap: 12px;
             flex-wrap: wrap;
         }
 
-        .btn {
+        .button-ui {
             display: inline-flex;
             align-items: center;
             justify-content: center;
             text-decoration: none;
-            padding: 12px 24px;
-            border-radius: 8px;
-            font-size: 0.95rem;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 0.9rem;
             font-weight: 600;
-            transition: all 0.2s ease;
+            transition: var(--transition-smooth);
         }
 
-        .btn-primary {
-            background-color: var(--cohn-blue);
+        .button-ui-primary {
+            background: linear-gradient(135deg, var(--brand-scarlet) 0%, #a30026 100%);
             color: #ffffff;
-            box-shadow: 0 4px 12px rgba(30, 58, 138, 0.15);
+            box-shadow: 0 4px 12px rgba(204, 0, 51, 0.2);
         }
 
-        .btn-primary:hover {
-            background-color: #172554;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(30, 58, 138, 0.25);
+        .button-ui-primary:hover {
+            transform: translateY(-1px);
         }
 
-        .btn-secondary {
-            background-color: #f1f5f9;
-            color: var(--primary-dark);
+        .button-ui-secondary {
+            background-color: #ffffff;
+            color: var(--ink-dark);
             border: 1px solid #e2e8f0;
         }
 
-        .btn-secondary:hover {
-            background-color: #e2e8f0;
-            transform: translateY(-2px);
+        .button-ui-secondary:hover {
+            background-color: #f8fafc;
+            transform: translateY(-1px);
         }
 
-        /* Base Section Structures Grid layouts */
+        /* VIEW PANEL MECHANICS */
+        .page-panel {
+            display: none;
+            opacity: 0;
+            margin-top: 24px;
+        }
+
+        .page-panel.active {
+            display: block;
+            opacity: 1;
+        }
+
+        .section-card {
+            background: var(--surface-card);
+            border-radius: var(--radius-main);
+            padding: 32px;
+            box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.04);
+            border: 1px solid #e2e8f0;
+        }
+
         h2 {
-            font-size: 1.4rem;
-            color: var(--primary-dark);
+            font-size: 1.2rem;
+            color: var(--ink-dark);
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             font-weight: 700;
-            margin-bottom: 25px;
+            margin-bottom: 24px;
             display: flex;
             align-items: center;
             gap: 15px;
@@ -189,159 +270,91 @@
             content: '';
             flex-grow: 1;
             height: 1px;
-            background-color: #e2e8f0;
+            background: linear-gradient(90deg, #e2e8f0 0%, transparent 100%);
         }
 
-        section {
-            margin-bottom: 45px;
-        }
-
-        /* Skills Showcase Blocks (Rubric: 2 Points) */
-        .skills-grid {
+        /* RUBRIC OUTCOME: SKILLS HIGH-DENSITY GRID (2 Points) */
+        .skills-container-layout {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 16px;
         }
 
-        .skill-card {
-            background: var(--card-bg);
+        .skill-luxury-card {
+            background: #f8fafc;
             border: 1px solid #e2e8f0;
-            padding: 20px;
-            border-radius: 12px;
+            padding: 16px;
+            border-radius: 8px;
             font-weight: 600;
-            color: var(--primary-dark);
+            color: var(--ink-dark);
             font-size: 0.95rem;
-            transition: all 0.2s ease;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.01);
+            transition: var(--transition-smooth);
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
 
-        .skill-card:hover {
-            border-color: var(--rutgers-red);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(15, 23, 42, 0.03);
+        .skill-luxury-card span {
+            font-size: 1.1rem;
+            background-color: #ffffff;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
         }
 
-        /* Project Cards Pipeline Layout (Rubric: 2 Points) */
-        .projects-list {
+        .skill-luxury-card:hover {
+            border-color: var(--brand-scarlet);
+            background-color: var(--brand-scarlet-alpha);
+        }
+
+        /* RUBRIC OUTCOME: PROJECTS PIPELINE LAYOUT (2 Points) */
+        .timeline-wrapper {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 16px;
         }
 
-        .project-card {
-            background: var(--card-bg);
+        .timeline-card {
+            background: #f8fafc;
             border: 1px solid #e2e8f0;
-            border-radius: 14px;
-            padding: 30px;
-            transition: all 0.3s ease;
+            border-radius: 8px;
+            padding: 24px;
+            transition: var(--transition-smooth);
             position: relative;
         }
 
-        .project-card::before {
+        .timeline-card::before {
             content: '';
             position: absolute;
             left: 0;
             top: 0;
             bottom: 0;
             width: 4px;
-            background-color: var(--cohn-blue);
-            border-top-left-radius: 14px;
-            border-bottom-left-radius: 14px;
-            transition: background-color 0.2s;
+            background-color: #cbd5e1;
+            border-top-left-radius: 8px;
+            border-bottom-left-radius: 8px;
         }
 
-        .project-card:hover::before {
-            background-color: var(--rutgers-red);
+        .timeline-card:hover::before {
+            background-color: var(--brand-scarlet);
         }
 
-        .project-card:hover {
-            box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.05);
+        .timeline-card:hover {
+            border-color: #cbd5e1;
+            background-color: #ffffff;
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.02);
         }
 
-        .project-meta {
+        .timeline-meta {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 8px;
         }
 
-        .project-title {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--primary-dark);
-        }
-
-        .project-date {
-            font-size: 0.8rem;
-            background-color: #f1f5f9;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-weight: 600;
-            color: var(--text-muted);
-        }
-
-        .project-desc {
-            color: #475569;
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 60px;
-            color: var(--text-muted);
-            font-size: 0.85rem;
-        }
-
-        /* Layout Fallbacks for Small Windows or Device Layout Displays */
-        @media (max-width: 780px) {
-            header {
-                flex-direction: column;
-                text-align: center;
-                padding: 30px 20px;
-            }
-            .profile-img {
-                margin: 0 auto;
-            }
-            .title-row {
-                flex-direction: column;
-                align-items: center;
-                gap: 10px;
-            }
-            .tags-row, .cta-container {
-                justify-content: center;
-            }
-        }
-    </style>
-</head>
-<body>
-
-    <div class="container">
-        
-        <!-- PERSONAL STATEMENT HEADER BLOCK CONTAINER (Rubric: 2 Points) -->
-        <header>
-            <img src="headshot.jpg" alt="Kristina Persaud Portrait" class="profile-img">
-            
-            <div class="header-content">
-                <div class="title-row">
-                    <h1>Kristina Persaud</h1>
-                </div>
-                
-                <div class="tags-row">
-                    <!-- Rutgers custom R identifier tag -->
-                    <span class="tag tag-rutgers">
-                        <span class="rutgers-r"></span> Rutgers Business School
-                    </span>
-                    <!-- New Professional Milestone Added -->
-                    <span class="tag tag-cohn">
-                        💼 Incoming Audit Intern @ CohnReznick
-                    </span>
-                </div>
-
-                <p class="personal-statement">
-                    Aspiring CPA and Accounting student leveraging a highly diversified foundation in data analytics, statistical business methods, and cross-functional corporate programs to solve complex financial puzzles.
-                </p>
-                
-                <div class="cta-container">
