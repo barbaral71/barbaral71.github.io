@@ -3,348 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kristina Persaud - Professional Portfolio</title>
-    <style>
-        :root {
-            --brand-scarlet: #cc0033;
-            --brand-scarlet-alpha: rgba(204, 0, 51, 0.05);
-            --ink-dark: #0f172a;
-            --ink-medium: #334155;
-            --surface-canvas: #f1f5f9;
-            --surface-card: #ffffff;
-            --radius-main: 12px;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-        }
-
-        body {
-            background-color: var(--surface-canvas);
-            color: var(--ink-medium);
-            line-height: 1.6;
-            padding: 40px 0;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        /* 2-COLUMN MAIN TOP LAYOUT */
-        .profile-hero-grid {
-            display: grid;
-            grid-template-columns: 300px 1fr;
-            gap: 40px;
-            align-items: start;
-            margin-bottom: 32px;
-        }
-
-        .left-profile-column {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-            align-items: center;
-        }
-
-        /* LARGE PHOTO WITH SHARP SMOOTH EDGES */
-        .profile-frame {
-            width: 300px;
-            height: 350px;
-            border-radius: var(--radius-main);
-            overflow: hidden;
-            box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.1);
-            border: 1px solid #e2e8f0;
-        }
-
-        .profile-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* BRAND SCARLET CREDENTIALS PANEL */
-        .credentials-panel {
-            background-color: var(--brand-scarlet);
-            color: #ffffff;
-            padding: 20px;
-            border-radius: var(--radius-main);
-            box-shadow: 0 8px 20px rgba(204, 0, 51, 0.15);
-            width: 100%;
-            text-align: center;
-        }
-
-        .credentials-title {
-            font-size: 0.85rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            opacity: 0.9;
-            margin-bottom: 6px;
-        }
-
-        .credentials-text {
-            font-size: 0.95rem;
-            font-weight: 600;
-            line-height: 1.4;
-        }
-
-        /* RIGHT CARD FOR STATEMENT & LINKS */
-        .right-content-card {
-            background: var(--surface-card);
-            border-radius: var(--radius-main);
-            padding: 40px;
-            box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.04);
-            border: 1px solid #e2e8f0;
-            min-height: 426px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        h1 {
-            font-size: 2.8rem;
-            color: var(--ink-dark);
-            font-weight: 800;
-            letter-spacing: -1px;
-            margin-bottom: 6px;
-        }
-
-        .subtitle-badge {
-            display: inline-block;
-            font-size: 0.85rem;
-            background-color: #f1f5f9;
-            color: var(--ink-dark);
-            border: 1px solid #e2e8f0;
-            padding: 6px 14px;
-            border-radius: 6px;
-            font-weight: 700;
-            margin-bottom: 24px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        /* RUBRIC CHECKPOINT: 1-SENTENCE PERSONAL STATEMENT */
-        .personal-statement {
-            font-size: 1.3rem;
-            color: var(--ink-medium);
-            line-height: 1.65;
-            margin-bottom: 32px;
-        }
-
-        .cta-layout {
-            display: flex;
-            gap: 14px;
-            flex-wrap: wrap;
-        }
-
-        .button-ui {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            padding: 12px 24px;
-            border-radius: 8px;
-            font-size: 0.95rem;
-            font-weight: 600;
-            transition: all 0.2s ease;
-        }
-
-        .button-ui-primary {
-            background: var(--brand-scarlet);
-            color: #ffffff;
-            box-shadow: 0 4px 12px rgba(204, 0, 51, 0.2);
-        }
-
-        .button-ui-secondary {
-            background-color: #ffffff;
-            color: var(--ink-dark);
-            border: 1px solid #e2e8f0;
-        }
-
-        /* SEPARATE VISUAL CARD SECTIONS */
-        .section-card {
-            background: var(--surface-card);
-            border-radius: var(--radius-main);
-            padding: 40px;
-            box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.04);
-            border: 1px solid #e2e8f0;
-            margin-top: 24px;
-        }
-
-        h2 {
-            font-size: 1.3rem;
-            color: var(--ink-dark);
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-weight: 700;
-            margin-bottom: 32px;
-        }
-
-        /* RUBRIC CHECKPOINT: SKILLS SEPARATE SHAPE BLOCKS */
-        .skills-container-layout {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .skill-luxury-card {
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            padding: 24px;
-            border-radius: 10px;
-            font-weight: 600;
-            color: var(--ink-dark);
-            font-size: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-
-        .skill-luxury-card span {
-            font-size: 1.3rem;
-            background-color: #ffffff;
-            width: 44px;
-            height: 44px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-        }
-
-        /* RUBRIC CHECKPOINT: PROJECTS SHAPE BLOCKS */
-        .timeline-wrapper {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .timeline-card {
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            border-radius: 10px;
-            padding: 32px;
-            position: relative;
-        }
-
-        .timeline-card::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 4px;
-            background-color: var(--brand-scarlet);
-            border-top-left-radius: 10px;
-            border-bottom-left-radius: 10px;
-        }
-
-        .timeline-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 12px;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        .timeline-title {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--ink-dark);
-        }
-
-        .timeline-date-tag {
-            font-size: 0.8rem;
-            background-color: var(--brand-scarlet-alpha);
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-weight: 700;
-            color: var(--brand-scarlet);
-        }
-
-        .timeline-description {
-            color: var(--ink-medium);
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 60px;
-            color: var(--ink-muted);
-            font-size: 0.85rem;
-        }
-
-        @media (max-width: 900px) {
-            .profile-hero-grid { grid-template-columns: 1fr; text-align: center; gap: 24px; }
-            .profile-frame { margin: 0 auto; }
-            .right-content-card { padding: 32px 24px; min-height: auto; }
-            .cta-layout { justify-content: center; }
-            h1 { font-size: 2.2rem; }
-        }
-    </style>
+    <title>Baize - Your AI Pair Programming Assistant</title>
+    <meta name="description" content="Baize is an open-source AI Coding Agent CLI that works with DeepSeek, OpenAI-compatible APIs, and local Ollama models. Transform your terminal into an intelligent pair programmer with tools, skills, and safe sandboxing.">
+    <meta name="keywords" content="ai, ai-agent, ai-agents, ai-coding, coding assistant, CLI tool, open source, DeepSeek, Ollama, pair programming, vibe coding">
+    <meta name="author" content="Baize Team">
+    <meta property="og:title" content="Baize - Your AI Pair Programming Assistant">
+    <meta property="og:description" content="Open-source AI Coding Agent CLI with multi-backend support, tool calling, and safe sandboxing. Code better, faster, in your terminal.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://github.com/barbaral71/Baize">
+    <meta property="og:image" content="https://via.placeholder.com/1200x630?text=Baize+AI+Coding+Agent">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#2d3748">
 </head>
-<body>
+<body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #f7fafc; color: #1a202c; line-height: 1.7;">
 
-    <div class="container">
-        
-        <!-- HERO BLOCK: Photo Left, Personal Statement Right -->
-        <div class="profile-hero-grid">
-            
-            <div class="left-profile-column">
-                <div class="profile-frame">
-                    <img src="headshot.jpg" alt="Kristina Persaud" class="profile-img">
+    <div style="max-width: 1100px; margin: 0 auto; padding: 40px 20px;">
+
+        <!-- Header Section with Hero Button -->
+        <header style="text-align: center; padding: 50px 0 30px;">
+            <h1 style="font-size: 3em; margin: 0 0 15px; color: #2b6cb0; font-weight: 800; letter-spacing: -1px;">🐉 Baize - Turn Your Terminal Into an AI Partner</h1>
+            <p style="font-size: 1.2em; color: #4a5568; max-width: 700px; margin: 0 auto 30px;">Meet Baize - the mythical beast of wisdom, now your friendly AI coding assistant. Code smarter, without leaving your terminal.</p>
+            <a href="https://github.com/barbaral71/Baize" style="display: inline-block; background-color: #e53e3e; color: #ffffff; padding: 18px 45px; font-size: 1.3em; font-weight: bold; text-decoration: none; border-radius: 50px; box-shadow: 0 8px 25px rgba(229, 62, 62, 0.4); transition: transform 0.2s, box-shadow 0.2s;">⬇️ Download Baize Now</a>
+            <p style="margin-top: 15px; font-size: 0.95em; color: #718096;">Free &amp; Open Source</p>
+        </header>
+
+        <!-- What is Baize Section -->
+        <section style="background: #ffffff; border-radius: 12px; padding: 40px; margin: 40px 0; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);">
+            <h2 style="color: #2b6cb0; font-size: 2em; margin-top: 0; border-bottom: 3px solid #ebf8ff; padding-bottom: 10px;">❓ What Is Baize?</h2>
+            <p style="font-size: 1.1em;">Baize is a powerful <strong>AI Coding Agent</strong> that works right inside your terminal (the black window where you type commands). It's like having a genius programmer sitting next to you, always ready to help write, review, and fix code.</p>
+            <p>In Chinese mythology, Baize is a magical creature that knows everything about every living thing. Our Baize captures that spirit - it understands your code, suggests improvements, and can even run commands for you!</p>
+            <p style="background: #ebf8ff; border-left: 5px solid #3182ce; padding: 15px 20px; border-radius: 5px; font-style: italic;">💡 <strong>What's "Vibe Coding"?</strong> It means coding in a natural, relaxed way - just tell Baize what you want in plain English, and it handles the technical implementation.</p>
+        </section>
+
+        <!-- Key Features Section -->
+        <section style="background: #ffffff; border-radius: 12px; padding: 40px; margin: 40px 0; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);">
+            <h2 style="color: #2b6cb0; font-size: 2em; margin-top: 0; border-bottom: 3px solid #ebf8ff; padding-bottom: 10px;">✨ Why You'll Love Baize</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 20px;">
+                <div style="background: #f7fafc; border-radius: 8px; padding: 20px; border: 1px solid #e2e8f0;">
+                    <h3 style="color: #2b6cb0; margin-top: 0;">🛠️ Real Tool Integration</h3>
+                    <p>Baize doesn't just talk - it acts. It can run commands, read files, and even make changes directly, all with your permission.</p>
                 </div>
-                
-                <div class="credentials-panel">
-                    <div class="credentials-title">ACCOUNTING AND ACCOUNTING INFORMATION SYSTEMS STUDENT</div>
-                    <div class="credentials-text">Third-Year Rutgers Business School—New Brunswick Undergraduate</div>
+                <div style="background: #f7fafc; border-radius: 8px; padding: 20px; border: 1px solid #e2e8f0;">
+                    <h3 style="color: #2b6cb0; margin-top: 0;">🎯 Multi-Backend Support</h3>
+                    <p>Works with 3 major AI providers: DeepSeek, OpenAI-compatible APIs, and Ollama (fully offline - your data stays local!).</p>
+                </div>
+                <div style="background: #f7fafc; border-radius: 8px; padding: 20px; border: 1px solid #e2e8f0;">
+                    <h3 style="color: #2b6cb0; margin-top: 0;">📚 Smart Skills Library</h3>
+                    <p>Load specialized "skills" (like debugging or code review) to make Baize an expert at whatever you're working on.</p>
+                </div>
+                <div style="background: #f7fafc; border-radius: 8px; padding: 20px; border: 1px solid #e2e8f0;">
+                    <h3 style="color: #2b6cb0; margin-top: 0;">🧠 Context Compression</h3>
+                    <p>Long conversations? No problem. Baize intelligently summarizes old chat history to save AI tokens and keep things fast.</p>
+                </div>
+                <div style="background: #f7fafc; border-radius: 8px; padding: 20px; border: 1px solid #e2e8f0;">
+                    <h3 style="color: #2b6cb0; margin-top: 0;">🤝 Sub-agent Delegation</h3>
+                    <p>Baize can spin up mini-agents to handle background tasks, so you can keep focusing on the big picture.</p>
+                </div>
+                <div style="background: #f7fafc; border-radius: 8px; padding: 20px; border: 1px solid #e2e8f0;">
+                    <h3 style="color: #2b6cb0; margin-top: 0;">🛡️ Safe Sandboxing</h3>
+                    <p>All AI actions run in a controlled environment - it can't mess up your system without your explicit approval.</p>
                 </div>
             </div>
+        </section>
 
-            <div class="right-content-card">
-                <h1>Kristina Persaud</h1>
-                <div>
-                    <span class="subtitle-badge"> Incoming Audit & Assurance Intern @ CohnReznick</span>
-                </div>
+        <!-- How to Get Started Section -->
+        <section style="background: #ffffff; border-radius: 12px; padding: 40px; margin: 40px 0; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);">
+            <h2 style="color: #2b6cb0; font-size: 2em; margin-top: 0; border-bottom: 3px solid #ebf8ff; padding-bottom: 10px;">⚡ Quick Start Guide</h2>
+            
+            <div style="background: #2d3748; color: #f7fafc; border-radius: 8px; padding: 20px; margin: 20px 0; font-family: 'Courier New', monospace; font-size: 1em;">
+                <p style="margin: 0;">1️⃣ Install Baize from the link below</p>
+                <p style="margin: 0;">2️⃣ Run <strong>baize</strong> in your terminal</p>
+                <p style="margin: 0;">3️⃣ Type "Hi Baize, help me start a Python project"</p>
+                <p style="margin: 0;">4️⃣ Watch the magic happen ✨</p>
+            </div>
 
-              <!-- Main container to place statement and button column side-by-side -->
-<div style="display: flex; gap: 2rem; align-items: start; margin-top: 1.5rem; width: 100%;">
-    
-    <!-- Left Column: Personal Statement -->
-    <div style="flex: 1;">
-   <!-- Container to separate text on the left and buttons on the right side -->
-<div style="display: flex; gap: 2rem; align-items: start; margin-top: 1.5rem; width: 100%;">
-    
-    <!-- Left Column: Personal Statement Block -->
-    <div style="flex: 1;">
-        <p class="personal-statement" style="margin: 0; line-height: 1.7; font-size: 1.05rem; color: #334155;">
-            Welcome! <strong>My name is Kristina Persaud, and I'm an academically driven student on the CPA-track leveraging hands-on GAAP compliance experience and accounting information systems coursework to build a diversified foundation and comprehension of complex audit processes from the lens of a professional auditor. </strong> I invite you to explore more about the various insights, experiences, and achievements I have developed throughout my academic and professional careers outlined below.</p>
-        </p>
+            <div style="text-align: center; margin: 30px 0;">
+                <a href="https://github.com/barbaral71/Baize" style="display: inline-block; background-color: #3182ce; color: #ffffff; padding: 15px 40px; font-size: 1.2em; font-weight: bold; text-decoration: none; border-radius: 50px; box-shadow: 0 5px 15px rgba(49, 130, 206, 0.4);">📥 Download Baize</a>
+                <p style="color: #718096; font-size: 0.9em; margin-top: 10px;">Just visit this link to get the application - it's that simple!</p>
+            </div>
+        </section>
+
+        <!-- Use Cases Section -->
+        <section style="background: #ffffff; border-radius: 12px; padding: 40px; margin: 40px 0; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);">
+            <h2 style="color: #2b6cb0; font-size: 2em; margin-top: 0; border-bottom: 3px solid #ebf8ff; padding-bottom: 10px;">🌟 Amazing Things You Can Do</h2>
+            <ul style="list-style-type: none; padding: 0; font-size: 1.1em;">
+                <li style="margin-bottom: 15px; display: flex; align-items: center;"><span style="background: #ebf8ff; border-radius: 50%; padding: 8px 12px; margin-right: 15px; font-size: 1.2em;">🐛</span> <strong>Fix annoying bugs:</strong> "Baize, why is my app crashing when I click submit?"</li>
+                <li style="margin-bottom: 15px; display: flex; align-items: center;"><span style="background: #ebf8ff; border-radius: 50%; padding: 8px 12px; margin-right: 15px; font-size: 1.2em;">🧪</span> <strong>Write tests:</strong> "Create unit tests for my authentication module"</li>
+                <li style="margin-bottom: 15px; display: flex; align-items: center;"><span style="background: #ebf8ff; border-radius: 50%; padding: 8px 12px; margin-right: 15px; font-size: 1.2em;">📝</span> <strong>Explain code:</strong> "What does this function do in simple terms?"</li>
+                <li style="margin-bottom: 15px; display: flex; align-items: center;"><span style="background: #ebf8ff; border-radius: 50%; padding: 8px 12px; margin-right: 15px; font-size: 1.2em;">🔄</span> <strong>Refactor everything:</strong> "Clean up my code and make it more readable"</li>
+                <li style="margin-bottom: 15px; display: flex; align-items: center;"><span style="background: #ebf8ff; border-radius: 50%; padding: 8px 12px; margin-right: 15px; font-size: 1.2em;">💬</span> <strong>Brainstorm solutions:</strong> "What's the best way to store user data?"</li>
+            </ul>
+        </section>
+
+        <!-- Privacy and Safety Section -->
+        <section style="background: #ffffff; border-radius: 12px; padding: 40px; margin: 40px 0; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);">
+            <h2 style="color: #2b6cb0; font-size: 2em; margin-top: 0; border-bottom: 3px solid #ebf8ff; padding-bottom: 10px;">🔒 Your Safety Matters</h2>
+            <p>Baize respects your creative freedom and your files. Its built-in <strong>safe sandbox</strong> means:</p>
+            <ul style="font-size: 1.05em;">
+                <li>All AI operations happen in a controlled space</li>
+                <li>You approve every command before it runs</li>
+                <li>No hidden actions, no surprises</li>
+                <li>Your private code stays private - use Ollama for fully local AI</li>
+            </ul>
+            <p style="background: #f0fff4; border-left: 5px solid #38a169; padding: 15px; border-radius: 5px;">👍 <strong>Beginner-Friendly:</strong> If you can write an email, you can use Baize. It's designed for humans first, programmers second.</p>
+        </section>
+
+        <!-- Community Section -->
+        <section style="background: #ffffff; border-radius: 12px; padding: 40px; margin: 40px 0; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); text-align: center;">
+            <h2 style="color: #2b6cb0; font-size: 2em; margin-top: 0;">🌍 Join the Community</h2>
+            <p style="font-size: 1.1em;">Baize is open source and constantly improving. Join us and shape the future of AI-assisted coding.</p>
+            <div style="margin-top: 25px;">
+                <a href="https://github.com/barbaral71/Baize" style="display: inline-block; background-color: #2f855a; color: #ffffff; padding: 14px 35px; font-size: 1.1em; font-weight: bold; text-decoration: none; border-radius: 50px; margin: 5px 10px; box-shadow: 0 4px 12px rgba(47, 133, 90, 0.35);">💻 View Source Code</a>
+                <a href="https://github.com/barbaral71/Baize" style="display: inline-block; background-color: #6b46c1; color: #ffffff; padding: 14px 35px; font-size: 1.1em; font-weight: bold; text-decoration: none; border-radius: 50px; margin: 5px 10px; box-shadow: 0 4px 12px rgba(107, 70, 193, 0.35);">⭐ Star Baize</a>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer style="text-align: center; padding: 30px 0; color: #a0aec0; font-size: 0.9em; border-top: 1px solid #e2e8f0; margin-top: 50px;">
+            <p>🦄 Baize - Ancient Wisdom, Modern Coding</p>
+            <p>Made with ❤️ for the open source community</p>
+        </footer>
+
     </div>
-
-    <!-- Right Column: Clean Stacking Vertical Buttons Block -->
-    <div class="cta-layout" style="flex: 0 0 240px; display: flex; flex-direction: column; gap: 0.75rem; margin: 0;">
-        <a href="resume.pdf" class="button-ui button-ui-primary" style="text-align: center; width: 100%; box-sizing: border-box; display: block;" download="Kristina_Persaud_Resume.pdf">Download My Resume</a>
-        <a href="https://linkedin.com" class="button-ui button-ui-secondary" style="text-align: center; width: 100%; box-sizing: border-box; display: block;" target="_blank">Connect with Me on LinkedIn</a>
-        <a href="mailto:kristinanpersaud@gmail.com" class="button-ui button-ui-secondary" style="text-align: center; width: 100%; box-sizing: border-box; display: block;">Send me an Email</a>
-    </div>
-
-
-</div>
-
-
-
-
-        <!-- SEPARATE SKILLS BOXES -->
-        <div class="section-card">
-            <h2>Core Competencies</h2>
-            <div class="skills-container-layout">
-
-
+</body>
+</html>
