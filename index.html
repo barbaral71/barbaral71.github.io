@@ -33,7 +33,6 @@
             padding-bottom: 60px;
         }
 
-        /* PREMIUM NAVIGATION BAR */
         nav {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(8px);
@@ -89,14 +88,12 @@
             background-color: var(--brand-scarlet);
         }
 
-        /* MAIN CONTAINER REGION */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 24px;
         }
 
-        /* VIEW PANEL MECHANICS */
         .page-panel {
             display: none;
             opacity: 0;
@@ -107,7 +104,6 @@
             opacity: 1;
         }
 
-        /* ASYMMETRICAL PROFILE HERO GRID SYSTEM */
         .profile-hero-grid {
             display: grid;
             grid-template-columns: 280px 1fr;
@@ -123,7 +119,6 @@
             align-items: center;
         }
 
-        /* LARGE PHOTO CARD WRAPPER */
         .profile-frame {
             width: 280px;
             height: 330px;
@@ -140,7 +135,6 @@
             object-fit: cover;
         }
 
-        /* SCARLET RED CREDENTIAL PANEL */
         .credentials-panel {
             background-color: var(--brand-scarlet);
             color: #ffffff;
@@ -166,7 +160,6 @@
             line-height: 1.4;
         }
 
-        /* RIGHT PANEL CONTENT BLOCK */
         .right-content-card {
             background: var(--surface-card);
             border-radius: var(--radius-main);
@@ -261,7 +254,6 @@
             transform: translateY(-1px);
         }
 
-        /* LOWER LAYOUT EXPANDED COMPONENTS */
         .section-card {
             background: var(--surface-card);
             border-radius: var(--radius-main);
@@ -290,7 +282,6 @@
             background: linear-gradient(90deg, #e2e8f0 0%, transparent 100%);
         }
 
-        /* DISTINCT SEPARATE BLOCK SYSTEM FOR COMPETENCIES GRID */
         .skills-container-layout {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
@@ -330,7 +321,6 @@
             box-shadow: 0 8px 16px rgba(15, 23, 42, 0.03);
         }
 
-        /* PROJECTS LIST SCHEMATICS */
         .timeline-wrapper {
             display: flex;
             flex-direction: column;
@@ -354,3 +344,20 @@
             bottom: 0;
             width: 4px;
             background-color: #cbd5e1;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
+
+        .timeline-card:hover::before {
+            background-color: var(--brand-scarlet);
+        }
+
+        .timeline-card:hover {
+            border-color: #cbd5e1;
+            background-color: #ffffff;
+            box-shadow: 0 8px 20px rgba(15, 23, 42, 0.03);
+        }
+
+        .timeline-meta {
+            display: flex;
+            justify-content: space-between;
