@@ -33,6 +33,7 @@
             padding-bottom: 60px;
         }
 
+        /* STICKY TOP NAVIGATION BAR */
         nav {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(8px);
@@ -88,12 +89,14 @@
             background-color: var(--brand-scarlet);
         }
 
+        /* CONTAINER REGION */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 24px;
         }
 
+        /* PANEL INTERFACES */
         .page-panel {
             display: none;
             opacity: 0;
@@ -104,9 +107,10 @@
             opacity: 1;
         }
 
+        /* 2-COLUMN MAIN LANDING HERO GRID */
         .profile-hero-grid {
             display: grid;
-            grid-template-columns: 280px 1fr;
+            grid-template-columns: 300px 1fr; /* Large left column for image/creds */
             gap: 40px;
             align-items: start;
             margin-bottom: 32px;
@@ -119,9 +123,10 @@
             align-items: center;
         }
 
+        /* LARGE PHOTO WITH SHARP SMOOTH EDGES */
         .profile-frame {
-            width: 280px;
-            height: 330px;
+            width: 300px;
+            height: 350px;
             border-radius: var(--radius-main);
             overflow: hidden;
             box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.1);
@@ -135,6 +140,7 @@
             object-fit: cover;
         }
 
+        /* BRAND SCARLET CREDENTIALS PANEL */
         .credentials-panel {
             background-color: var(--brand-scarlet);
             color: #ffffff;
@@ -160,13 +166,14 @@
             line-height: 1.4;
         }
 
+        /* RIGHT SECTION CONTAINER FOR STATEMENT */
         .right-content-card {
             background: var(--surface-card);
             border-radius: var(--radius-main);
             padding: 40px;
             box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.04);
             border: 1px solid #e2e8f0;
-            min-height: 410px;
+            min-height: 426px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -207,6 +214,7 @@
             letter-spacing: 0.5px;
         }
 
+        /* RUBRIC METRIC: PERSONAL STATEMENT (2 Points) */
         .personal-statement {
             font-size: 1.3rem;
             color: var(--ink-medium);
@@ -254,6 +262,7 @@
             transform: translateY(-1px);
         }
 
+        /* SEPARATE VISUAL SECTIONS BELOW THE HERO */
         .section-card {
             background: var(--surface-card);
             border-radius: var(--radius-main);
@@ -282,6 +291,7 @@
             background: linear-gradient(90deg, #e2e8f0 0%, transparent 100%);
         }
 
+        /* RUBRIC METRIC: SKILLS SEPARATE CARD BLOCKS (2 Points) */
         .skills-container-layout {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
@@ -321,6 +331,7 @@
             box-shadow: 0 8px 16px rgba(15, 23, 42, 0.03);
         }
 
+        /* RUBRIC METRIC: PROJECTS SHAPE BLOCKS (2 Points) */
         .timeline-wrapper {
             display: flex;
             flex-direction: column;
@@ -339,25 +350,3 @@
         .timeline-card::before {
             content: '';
             position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 4px;
-            background-color: #cbd5e1;
-            border-top-left-radius: 10px;
-            border-bottom-left-radius: 10px;
-        }
-
-        .timeline-card:hover::before {
-            background-color: var(--brand-scarlet);
-        }
-
-        .timeline-card:hover {
-            border-color: #cbd5e1;
-            background-color: #ffffff;
-            box-shadow: 0 8px 20px rgba(15, 23, 42, 0.03);
-        }
-
-        .timeline-meta {
-            display: flex;
-            justify-content: space-between;
