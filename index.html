@@ -3,10 +3,272 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website Homepage</title>
+    <title>Kristina Persaud - Professional Portfolio</title>
+    <style>
+        /* Professional Color Palette & Typography */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f6f9;
+            color: #333333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Hero / Personal Statement Section */
+        header {
+            text-align: center;
+            padding: 50px 30px;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            margin-bottom: 40px;
+        }
+
+        /* Headshot Image Styling */
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid #1e3a8a; /* Deep blue border accent */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2.6rem;
+            color: #111111;
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: #cc0033; /* Rutgers Red Accent */
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .personal-statement {
+            font-size: 1.25rem;
+            color: #4a5568;
+            max-width: 750px;
+            margin: 0 auto 25px auto;
+            font-weight: 400;
+        }
+
+        /* Call to Action Buttons */
+        .cta-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary {
+            background-color: #1e3a8a; /* Deep Corporate Blue */
+            color: #ffffff;
+            border: 1px solid #1e3a8a;
+        }
+
+        .btn-primary:hover {
+            background-color: #172554;
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background-color: #ffffff;
+            color: #1e3a8a;
+            border: 1px solid #1e3a8a;
+        }
+
+        .btn-secondary:hover {
+            background-color: #f1f5f9;
+            transform: translateY(-1px);
+        }
+
+        /* Core Section Grid layout */
+        h2 {
+            font-size: 1.6rem;
+            color: #1e3a8a;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 8px;
+        }
+
+        section {
+            background: #ffffff;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            margin-bottom: 35px;
+        }
+
+        /* Skills Layout */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+        }
+
+        .skill-item {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            color: #334155;
+            text-align: center;
+            padding: 14px;
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        /* Projects/Experience Layout */
+        .project-card {
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #cc0033; /* Rutgers red left border anchor */
+            margin-bottom: 20px;
+        }
+
+        .project-card:last-child {
+            margin-bottom: 0;
+        }
+
+        .project-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+        }
+
+        .project-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #0f172a;
+        }
+
+        .project-date {
+            font-size: 0.85rem;
+            color: #64748b;
+            font-weight: 600;
+        }
+
+        .project-desc {
+            color: #475569;
+            font-size: 0.95rem;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to My Website!</h1>
-    <p>This is the main landing page served by default.</p>
+
+    <div class="container">
+        
+        <!-- PERSONAL STATEMENT SECTION (Rubric: 2 Points) -->
+        <header>
+            <!-- HEADSHOT IMAGE: Replace 'headshot.jpg' with your actual image filename -->
+            <img src="headshot.jpg" alt="Kristina Persaud Headshot" class="profile-img">
+            
+            <h1>Kristina Persaud</h1>
+            <div class="subtitle">Rutgers Business School — New Brunswick</div>
+            <p class="personal-statement">
+                Aspiring CPA and honors Accounting student leveraging rigorous public accounting simulations and data analytics competencies to drive financial transparency and audit excellence.
+            </p>
+            <div class="cta-container">
+                <a href="resume.pdf" class="btn btn-primary" download="Kristina_Persaud_Resume.pdf">Download Resume</a>
+                <a href="https://linkedin.com" class="btn btn-secondary" target="_blank">LinkedIn Profile</a>
+            </div>
+        </header>
+
+        <!-- SKILLS SHOWCASE SECTION (Rubric: 2 Points) -->
+        <section>
+            <h2>Technical & Professional Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-item">Audit & Assurance</div>
+                <div class="skill-item">Risk Assessment</div>
+                <div class="skill-item">Power BI</div>
+                <div class="skill-item">Advanced Excel</div>
+                <div class="skill-item">SQL Database Management</div>
+                <div class="skill-item">HTML & CSS</div>
+            </div>
+        </section>
+
+        <!-- PROJECTS & HIGHLIGHTS SECTION (Rubric: 2 Points) -->
+        <section>
+            <h2>Featured Practical Projects & Simulations</h2>
+            <div class="projects-list">
+                
+                <!-- Project/Simulation 1 -->
+                <div class="project-card">
+                    <div class="project-meta">
+                        <div class="project-title">EY Audit Job Simulation</div>
+                        <div class="project-date">Fall 2026</div>
+                    </div>
+                    <p class="project-desc">
+                        Executed a rigorous audit program framework involving material misstatement risk analysis, internal control validation, and substantive account testing pipelines tailored to specific operational domains.
+                    </p>
+                </div>
+
+                <!-- Project/Simulation 2 -->
+                <div class="project-card">
+                    <div class="project-meta">
+                        <div class="project-title">Accounting & Advisory Technology Frameworks</div>
+                        <div class="project-date">Spring 2026</div>
+                    </div>
+                    <p class="project-desc">
+                        Evaluated the impact of emerging AI tools and data pipeline tools like Power BI within corporate public accounting workflows through targeted case assessments with Grant Thornton and Ernst & Young.
+                    </p>
+                </div>
+
+                <!-- Project/Simulation 3 -->
+                <div class="project-card">
+                    <div class="project-meta">
+                        <div class="project-title">Academic Peer Mentorship Framework</div>
+                        <div class="project-date">2025 - Present</div>
+                    </div>
+                    <p class="project-desc">
+                        Provided more than 15 hours of individual technical instruction in advanced accounting principles, cost accounting, and business operational methodologies across Rutgers university systems.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Kristina Persaud. Built for professional presentation via GitHub Pages.</p>
+        </footer>
+
+    </div>
+
 </body>
 </html>
