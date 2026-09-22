@@ -29,11 +29,11 @@
         body {
             background-color: var(--surface-canvas);
             color: var(--ink-medium);
-            line-height: 1.5;
+            line-height: 1.6;
             padding-bottom: 60px;
         }
 
-        /* FIXED HIGH-DENSITY STICKY NAVIGATION */
+        /* PREMIUM GLASSMORPHIC NAVIGATION BAR */
         nav {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(8px);
@@ -41,8 +41,8 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            padding: 12px 0;
-            margin-bottom: 24px;
+            padding: 16px 0;
+            margin-bottom: 32px;
         }
 
         .nav-container {
@@ -58,13 +58,13 @@
             font-weight: 800;
             color: var(--ink-dark);
             text-decoration: none;
-            font-size: 1rem;
+            font-size: 1.1rem;
             letter-spacing: -0.5px;
         }
 
         .nav-links {
             display: flex;
-            gap: 12px;
+            gap: 16px;
         }
 
         .nav-tab {
@@ -72,7 +72,7 @@
             border: none;
             color: var(--ink-muted);
             font-weight: 700;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             cursor: pointer;
             transition: var(--transition-smooth);
             padding: 8px 16px;
@@ -89,7 +89,7 @@
             background-color: var(--brand-scarlet);
         }
 
-        /* CONTAINER REGION */
+        /* MAIN CONTAINER REGION */
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -107,21 +107,81 @@
             opacity: 1;
         }
 
-        /* HIGH-DENSITY HERO BLOCK */
-        header {
+        /* ASYMMETRICAL 2-COLUMN PROFILE HERO CONTAINER Layout split */
+        .profile-hero-grid {
+            display: grid;
+            grid-template-columns: 280px 1fr; /* Larger left column allocation */
+            gap: 40px;
+            align-items: start;
+            margin-bottom: 32px;
+        }
+
+        /* Left side elements column aggregation block */
+        .left-profile-column {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            align-items: center;
+        }
+
+        /* LARGE SQUARE BOX PORTRAIT WITH SMOOTH EDGES */
+        .profile-frame {
+            width: 280px;
+            height: 330px;
+            border-radius: var(--radius-main);
+            overflow: hidden;
+            box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.1);
+            border: 1px solid #e2e8f0;
+            background-color: var(--surface-card);
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* STYLIZED CREDENTIALS CARD PANEL IN RUTGERS SCARLET */
+        .credentials-panel {
+            background-color: var(--brand-scarlet);
+            color: #ffffff;
+            padding: 20px;
+            border-radius: var(--radius-main);
+            box-shadow: 0 8px 20px rgba(204, 0, 51, 0.15);
+            width: 100%;
+            text-align: center;
+        }
+
+        .credentials-title {
+            font-size: 0.85rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.9;
+            margin-bottom: 6px;
+        }
+
+        .credentials-text {
+            font-size: 0.95rem;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        /* RIGHT CONTENT COLUMN SECTION ARCHITECTURE */
+        .right-content-card {
             background: var(--surface-card);
             border-radius: var(--radius-main);
-            padding: 32px;
-            box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.05);
+            padding: 40px;
+            box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.04);
             border: 1px solid #e2e8f0;
-            display: grid;
-            grid-template-columns: 200px 1fr;
-            gap: 32px;
-            align-items: center;
+            min-height: 410px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
             position: relative;
         }
 
-        header::before {
+        .right-content-card::before {
             content: '';
             position: absolute;
             top: 0;
@@ -133,93 +193,40 @@
             border-top-right-radius: var(--radius-main);
         }
 
-        /* PREMIUM GEOMETRIC DIAMOND WRAPPER MASK */
-        .profile-shadow-wrapper {
-            filter: drop-shadow(0px 8px 16px rgba(15, 23, 42, 0.12));
-            width: 200px;
-            height: 200px;
-            flex-shrink: 0;
-        }
-
-        .profile-frame {
-            width: 100%;
-            height: 100%;
-            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-            background-color: #f1f5f9;
-        }
-
-        .profile-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transform: scale(1.15);
-        }
-
-        .header-main-info {
-            flex-grow: 1;
-        }
-
         h1 {
-            font-size: 2.2rem;
+            font-size: 2.8rem;
             color: var(--ink-dark);
             font-weight: 800;
-            letter-spacing: -0.5px;
-            margin-bottom: 8px;
+            letter-spacing: -1px;
+            margin-bottom: 6px;
         }
 
-        .badge-strip {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-            margin-bottom: 16px;
-        }
-
-        .badge {
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            padding: 6px 12px;
-            border-radius: 6px;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .badge-rutgers {
-            background-color: var(--brand-scarlet-alpha);
-            color: var(--brand-scarlet);
-            border: 1px solid rgba(204, 0, 51, 0.1);
-        }
-
-        .rutgers-r-symbol {
-            font-weight: 900;
-            color: var(--brand-scarlet);
-            background: #ffffff;
-            width: 16px;
-            height: 16px;
-            border-radius: 3px;
-            text-align: center;
-            line-height: 16px;
-            font-size: 0.65rem;
-        }
-
-        .badge-cohn {
+        .subtitle-badge {
+            display: inline-block;
+            font-size: 0.85rem;
             background-color: #f1f5f9;
             color: var(--ink-dark);
             border: 1px solid #e2e8f0;
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
+        /* RUBRIC REGION: 1-SENTENCE PERSONAL STATEMENT (2 Points) */
         .personal-statement {
-            font-size: 1.15rem;
+            font-size: 1.3rem;
             color: var(--ink-medium);
-            margin-bottom: 20px;
-            line-height: 1.6;
+            line-height: 1.65;
+            margin-bottom: 32px;
+            font-weight: 400;
         }
 
         .cta-layout {
             display: flex;
-            gap: 12px;
+            gap: 14px;
             flex-wrap: wrap;
         }
 
@@ -228,9 +235,9 @@
             align-items: center;
             justify-content: center;
             text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 6px;
-            font-size: 0.9rem;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 0.95rem;
             font-weight: 600;
             transition: var(--transition-smooth);
         }
@@ -256,23 +263,23 @@
             transform: translateY(-1px);
         }
 
-        /* VIEW PANEL STRUCTURES */
+        /* LOWER FULL-WIDTH MAIN WRAPPER COMPONENT PANELS */
         .section-card {
             background: var(--surface-card);
             border-radius: var(--radius-main);
-            padding: 32px;
+            padding: 40px;
             box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.04);
             border: 1px solid #e2e8f0;
             margin-top: 24px;
         }
 
         h2 {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             color: var(--ink-dark);
             text-transform: uppercase;
             letter-spacing: 1.5px;
             font-weight: 700;
-            margin-bottom: 24px;
+            margin-bottom: 32px;
             display: flex;
             align-items: center;
             gap: 15px;
@@ -285,82 +292,55 @@
             background: linear-gradient(90deg, #e2e8f0 0%, transparent 100%);
         }
 
-        /* SKILLS SHOWCASE TRACK */
+        /* RUBRIC REGION: SKILLS SEPARATE grid BLOCK SYSTEM (2 Points) */
         .skills-container-layout {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 16px;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 20px;
         }
 
         .skill-luxury-card {
-            background: #f8fafc;
+            background: #ffffff;
             border: 1px solid #e2e8f0;
-            padding: 16px;
-            border-radius: 8px;
+            padding: 24px;
+            border-radius: 10px;
             font-weight: 600;
             color: var(--ink-dark);
-            font-size: 0.95rem;
+            font-size: 1rem;
             transition: var(--transition-smooth);
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 16px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.01);
         }
 
         .skill-luxury-card span {
-            font-size: 1.1rem;
-            background-color: #ffffff;
-            width: 32px;
-            height: 32px;
+            font-size: 1.3rem;
+            background-color: var(--surface-canvas);
+            width: 44px;
+            height: 44px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 6px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            border-radius: 8px;
         }
 
         .skill-luxury-card:hover {
             border-color: var(--brand-scarlet);
             background-color: var(--brand-scarlet-alpha);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(15, 23, 42, 0.03);
         }
 
-        /* PROJECTS PIPELINE LAYOUT */
+        /* RUBRIC REGION: PROJECTS LIST SYSTEM (2 Points) */
         .timeline-wrapper {
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            gap: 20px;
         }
 
         .timeline-card {
             background: #f8fafc;
             border: 1px solid #e2e8f0;
-            border-radius: 8px;
-            padding: 24px;
-            transition: var(--transition-smooth);
-            position: relative;
-        }
-
-        .timeline-card::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 4px;
-            background-color: #cbd5e1;
-            border-top-left-radius: 8px;
-            border-bottom-left-radius: 8px;
-        }
-
-        .timeline-card:hover::before {
-            background-color: var(--brand-scarlet);
-        }
-
-        .timeline-card:hover {
-            border-color: #cbd5e1;
-            background-color: #ffffff;
-            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.02);
-        }
-
-        .timeline-meta {
-            display: flex;
-            justify-content: space-between;
+            border-radius: 10px;
+            padding: 32px;
