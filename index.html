@@ -33,7 +33,7 @@
             padding-bottom: 60px;
         }
 
-        /* PREMIUM GLASSMORPHIC NAVIGATION BAR */
+        /* PREMIUM NAVIGATION BAR */
         nav {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(8px);
@@ -107,16 +107,15 @@
             opacity: 1;
         }
 
-        /* ASYMMETRICAL 2-COLUMN PROFILE HERO CONTAINER Layout split */
+        /* ASYMMETRICAL PROFILE HERO GRID SYSTEM */
         .profile-hero-grid {
             display: grid;
-            grid-template-columns: 280px 1fr; /* Larger left column allocation */
+            grid-template-columns: 280px 1fr;
             gap: 40px;
             align-items: start;
             margin-bottom: 32px;
         }
 
-        /* Left side elements column aggregation block */
         .left-profile-column {
             display: flex;
             flex-direction: column;
@@ -124,7 +123,7 @@
             align-items: center;
         }
 
-        /* LARGE SQUARE BOX PORTRAIT WITH SMOOTH EDGES */
+        /* LARGE PHOTO CARD WRAPPER */
         .profile-frame {
             width: 280px;
             height: 330px;
@@ -141,7 +140,7 @@
             object-fit: cover;
         }
 
-        /* STYLIZED CREDENTIALS CARD PANEL IN RUTGERS SCARLET */
+        /* SCARLET RED CREDENTIAL PANEL */
         .credentials-panel {
             background-color: var(--brand-scarlet);
             color: #ffffff;
@@ -167,7 +166,7 @@
             line-height: 1.4;
         }
 
-        /* RIGHT CONTENT COLUMN SECTION ARCHITECTURE */
+        /* RIGHT PANEL CONTENT BLOCK */
         .right-content-card {
             background: var(--surface-card);
             border-radius: var(--radius-main);
@@ -215,7 +214,6 @@
             letter-spacing: 0.5px;
         }
 
-        /* RUBRIC REGION: 1-SENTENCE PERSONAL STATEMENT (2 Points) */
         .personal-statement {
             font-size: 1.3rem;
             color: var(--ink-medium);
@@ -263,7 +261,7 @@
             transform: translateY(-1px);
         }
 
-        /* LOWER FULL-WIDTH MAIN WRAPPER COMPONENT PANELS */
+        /* LOWER LAYOUT EXPANDED COMPONENTS */
         .section-card {
             background: var(--surface-card);
             border-radius: var(--radius-main);
@@ -292,7 +290,7 @@
             background: linear-gradient(90deg, #e2e8f0 0%, transparent 100%);
         }
 
-        /* RUBRIC REGION: SKILLS SEPARATE grid BLOCK SYSTEM (2 Points) */
+        /* DISTINCT SEPARATE BLOCK SYSTEM FOR COMPETENCIES GRID */
         .skills-container-layout {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
@@ -332,7 +330,7 @@
             box-shadow: 0 8px 16px rgba(15, 23, 42, 0.03);
         }
 
-        /* RUBRIC REGION: PROJECTS LIST SYSTEM (2 Points) */
+        /* PROJECTS LIST SCHEMATICS */
         .timeline-wrapper {
             display: flex;
             flex-direction: column;
@@ -344,3 +342,15 @@
             border: 1px solid #e2e8f0;
             border-radius: 10px;
             padding: 32px;
+            transition: var(--transition-smooth);
+            position: relative;
+        }
+
+        .timeline-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background-color: #cbd5e1;
